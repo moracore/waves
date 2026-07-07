@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Waves</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main id="app">
+  <header>
+    <h1>waves</h1>
+    <div class="presets">
+      <button data-preset="sine">sine</button>
+      <button data-preset="organ">organ</button>
+      <button data-preset="saw">saw</button>
+      <button data-preset="square">square</button>
+    </div>
+  </header>
+
+  <section class="viz-card">
+    <div class="label">lissajous — x vs y</div>
+    <canvas id="xy"></canvas>
+  </section>
+
+  <section class="viz-card slim">
+    <canvas id="scope"></canvas>
+  </section>
+
+  <section class="viz-card slim">
+    <div class="label">harmonics — drag the bars</div>
+    <canvas id="harmonics"></canvas>
+  </section>
+
+  <section class="tuning-row">
+    <select id="tuning" aria-label="tuning system">
+      <option value="equal">equal temperament</option>
+      <option value="just">just intonation</option>
+      <option value="pythagorean">pythagorean</option>
+      <option value="meantone">¼-comma meantone</option>
+    </select>
+    <select id="root" aria-label="root note">
+      <option value="0">root: C</option>
+      <option value="1">root: C#</option>
+      <option value="2">root: D</option>
+      <option value="3">root: D#</option>
+      <option value="4">root: E</option>
+      <option value="5">root: F</option>
+      <option value="6">root: F#</option>
+      <option value="7">root: G</option>
+      <option value="8">root: G#</option>
+      <option value="9">root: A</option>
+      <option value="10">root: A#</option>
+      <option value="11">root: B</option>
+    </select>
+  </section>
+
+  <section id="keyboards">
+    <div class="kbd" data-start-midi="60"></div>
+    <div class="kbd" data-start-midi="36"></div>
+    <div class="label hint">tap = hold note · tap again = off · drag = glissando</div>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
